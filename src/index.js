@@ -46,8 +46,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    let formSubmitted = this.submitted
-    if (formSubmitted) {
+    if (this.state.submitted) {
       return <h1>Submitted!</h1>
     } else {
       return (
@@ -71,30 +70,6 @@ class LoginForm extends React.Component {
       )
     }
   }
-}
-
-// function LoginForm() {
-//   return (
-//     <form>        
-//       <label>
-//         Name:
-//         <input type="text" />
-//       </label>
-//     <br />
-//       <label>
-//         Password:
-//         <input type="password" />
-//       </label>
-//     <br />
-//       <input type="submit" value="Submit" />
-//     </form>
-//   )
-// }
-
-function Success() {
-  return (
-    <h1>Success</h1>
-  )
 }
 
 function RegisterForm() {
@@ -125,33 +100,36 @@ class Login extends React.Component {
     super(props)
     this.registerForm = this.registerForm.bind(this)
     this.loginForm = this.loginForm.bind(this)
-    this.state = {login: false, register: false}
+    this.success = this.success.bind(this)
+    this.state = {page: "main"}
   }
 
   registerForm() {
-    this.setState({login: false, register: true})
+    this.setState({page: "register"})
   }
 
   loginForm() {
-    this.setState({login: true, register: false})
+    this.setState({page: "login"})
+  }
+
+  success() {
+    this.setState({page: "success"})
   }
 
   render() {
-    let register = this.state.register;
-    let login = this.state.login;
-    if (register) {
+    if (this.state.page === "register") {
       return (
         <div>
-        <RegisterForm onSubmit={Success}/>
+        <RegisterForm onSubmit={this.success}/>
         </div>
       ) 
-    } else if (login) {
+    } else if (this.state.page === "login") {
       return (
         <div>
-        <LoginForm  onSubmit={Success}/>
+        <LoginForm  onSubmit={this.success}/>
         </div>
       )
-    } else{
+    } else if (this.state.page === "main"){
       return (
         <div>
         <RegisterButton onClick={this.registerForm} />
@@ -159,6 +137,10 @@ class Login extends React.Component {
         <SignInButton onClick={this.loginForm} />
         </div>
       )
+    } else if (this.state.page === "success") {
+      <div>
+        <h1 background-color="red;">Success!</h1>
+      </div>
     }
   }
 }
