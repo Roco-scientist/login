@@ -139,7 +139,7 @@ class Login extends React.Component {
       )
     } else if (this.state.page === "success") {
       <div>
-        <h1 background-color="red;">Success!</h1>
+        <h1>Success!</h1>
       </div>
     }
   }
