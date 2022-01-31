@@ -51,20 +51,19 @@ class LoginForm extends React.Component {
     } else {
       return (
         <form>
-          <label>
-            Name:
-            <input type="text" />
-          </label>
-          <br />
-          <label>
-            Password:
+          <p>
+            <label for='a'>Name:</label>
+            <input id='a' type="text" />
+          </p>
+          <p>
+            <label for='b'>Password:</label>
             <input 
               type="password" 
               name="password" 
+              id='b'
               value={this.state.password} 
               onChange={this.handleInputChange} />
-          </label>
-          <br />
+          </p>
           <input type="submit" value="Submit" onSubmit={this.submitForm}/>
         </form>
       )
@@ -75,21 +74,18 @@ class LoginForm extends React.Component {
 function RegisterForm() {
   return (
     <form>        
-      <label>
-        Name:
-        <input type="text" />
-      </label>
-    <br />
-      <label>
-        Email:
+      <p>
+        <label for='a'>Name:</label>
+        <input id='a' type="text" />
+      </p>
+      <p>
+        <label for='b'>Email:</label>
         <input type="email" />
-      </label>
-    <br />
-      <label>
-        Password:
-        <input type="password" />
-      </label>
-    <br />
+      </p>
+      <p>
+        <label for='c'>Password:</label>
+        <input id='c' type="password" />
+      </p>
       <input type="submit" value="Submit" />
     </form>
   )

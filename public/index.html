@@ -7,13 +7,14 @@
 body {
   background-color: #282828;
   color: #98971a;
+  font: 'Roboto Mono', monospace;
 }
 
 .form-box {
   border: 2px solid #98971a;
   padding: 40px;
   text-align: center;
-  margin: 20%;
+  margin: 10%;
   box-shadow:0 10px 20px rgba(250, 189, 47, 0.5), 0 6px 6px rgba(250, 189, 47, 0.5);
 }
 
@@ -22,12 +23,33 @@ button {
   margin: 5px;
 }
 
-button:hover {
-  background-color: #689d6a;
+button:hover { background-color: #689d6a; }
+
+h1 {
+  color: #b8bb26;
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
 }
+
+input { margin: 5px; }
+
+form  { 
+  display: table; 
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
 
 </style>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -53,6 +75,7 @@ button:hover {
     <title>React App</title>
   </head>
   <body>
+    <h1>Investment Info</h1>
     <div id="root" class="form-box"></div>
   </body>
 </html>
